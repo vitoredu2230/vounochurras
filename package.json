@@ -1,0 +1,18 @@
+{
+  "name": "vounochurras",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo gerenciar e organizar churrascos entre amigos e familiares, tendo o total controle da quantidade de pessoas que estarão no evento e tendo o diferencial de possuir ranking entre os membros para ver quem participa de mais churrascos.",
+  "main": "apps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vitor Eduardo Witchemichen",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}
