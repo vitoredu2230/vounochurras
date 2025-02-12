@@ -10,6 +10,7 @@
   "author": "Vitor Eduardo Witchemichen",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
