@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vounochurras - Home</title>
+    <link rel="stylesheet" href="/assets/resources/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+    <header id="header">
+
+    </header>
+    <main>
+        <div class="container bg-light" id="register-container">
+            <div class="row">
+                <h5>Preencha as informações do seu churrasco</h5>
+            </div>
+            <form class="row g-3 was-validated" onsubmit="event.preventDefault(); return validarCampos();">
+                <div class="col-md-6">
+                    <label for="inputNameBarbecue" class="form-label">Nome do Churrasco</label>
+                    <input
+                    pattern="^[A-Za-zÀ-ÖØ-öø-ÿ0-9' ]{3,50}$"
+                    placeholder="Ex: Churrasco da Firma"
+                    id="inputNameBarbecue"
+                    type="text"
+                    class="form-control"
+                    autofocus
+                    required
+                    />
+                    <div class="invalid-feedback">
+                        Por favor, insira um nome de churrasco válido!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputDateBarbecue" class="form-label">Data do Churrasco</label>
+                    <input type="date" class="form-control" id="inputDateBarbecue" required>
+                </div>
+                <div class="col-12">
+                    <label for="inputAddressBarbecue" class="form-label">Local do Churrasco</label>
+                    <input 
+                    pattern="^Rua\s[\p{L}\d\s]+Nº\s\d+,\sBairro\s[\p{L}\d\s]+,\sCidade\s[\p{L}\d\s]+,\sEstado\s[\p{L}\d\s]+$"
+                    type="text" 
+                    class="form-control" 
+                    id="inputAddressBarbecue" 
+                    placeholder="Ex: Rua Concórdia dos Serafins Nº 123, Bairro Lotus, Cidade de Primavera, Estado Paraná"
+                    required>
+                </div>
+                <div class="col-6">
+                    <label for="inputTimeBarbecue" class="form-label">Começa às</label>
+                    <input type="time" class="form-control" id="inputTimeBarbecue" min="09:00" max="21:00" required>
+                </div>
+                <div class="col-6">
+                    <label for="inputDurationBarbecue" class="form-label">Duração</label>
+                    <input type="time" class="form-control" id="inputDurationBarbecue" max="06:00" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputNumberGuests" class="form-label">Nº de Convidados</label>
+                    <input type="number" id="inputNumberGuests" class="form-control" required>
+                </div>
+                <div class="col-4">
+                    <label for="inputMeatKG" class="form-label">Quantidade em kg de Carne</label>
+                    <input type="number" id="inputMeatKG" class="form-control" required>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <label for="">Esse churrasco inclui:</label>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Churrasqueira-Parede" name="includes-group" id="wallGrill">
+                                <label class="form-check-label" for="wallGrill">
+                                    Churrasqueira embutida na parede;
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Churrasqueira-Alvenaria" id="masonryGrill" name="includes-group" name="includes-group">
+                                <label class="form-check-label" for="masonryGrill">
+                                    Churrasqueira de alvenaria;
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Sala-Jogos" id="gamesRoom" name="includes-group">
+                                <label class="form-check-label" for="gamesRoom">
+                                    Sala de Jogos;
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Geladeira" id="fridge" name="includes-group">
+                                <label class="form-check-label" for="fridge">
+                                    Geladeira;
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="inputNameAdmin" class="form-label">Nome do Administrador do Churrasco</label>
+                    <input 
+                    pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+" 
+                    type="text" 
+                    id="inputNameAdmin" 
+                    class="form-control"
+                    placeholder="Ex: Fulano Deltrano Ciclano"
+                    required>
+                </div>
+                <div class="col-6">
+                    <label for="inputBirthdayAdmin" class="form-label">Data de Nascimento do Administrador do Churrasco</label>
+                    <input min="1900-01-01" type="date" id="inputBirthdayAdmin" class="form-control" required>
+                </div>
+                <div class="col-6">
+                    <label for="inputCPFAdmin" class="form-label">CPF do Administrador do Churrasco</label>
+                    <input
+                    pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+                    placeholder="000.000.000-00"
+                    type="text"
+                    id="inputCPFAdmin" 
+                    class="form-control"
+                    required
+                    >
+                </div>
+                <div class="col-6">
+                    <label for="inputEmailAdmin" class="form-label">Email do Administrador do Churrasco</label>
+                    <input type="email" id="inputEmailAdmin" class="form-control" required>
+                </div>
+                <div class="col-6">
+                    <label for="">Gênero*</label>
+                <p>
+                    <label for="input-gender-masculine">
+                        <input
+                            id="input-gender-masculine"
+                            name="gender-group"
+                            type="radio"
+                            required
+                        />
+                        <span>Masculino</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input
+                            id="input-gender-feminine"
+                            name="gender-group"
+                            type="radio"
+                        />
+                        <span>Feminino</span>
+                    </label>
+                </p>
+                <span class="error-text" id="gender-error">O campo é obrigatório.</span>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-danger" onclick="limpar();">Limpar</button>
+                    <button type="submit" class="btn btn-danger" onclick="save(); atualizarModal();">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer id="footer">
+
+    </footer>
+
+    
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/app/model/Gender.js"></script>
+    <script src="/app/index.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>

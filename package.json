@@ -11,9 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitoredu2230/vounochurras.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitoredu2230/vounochurras/issues"
+  },
+  "homepage": "https://github.com/vitoredu2230/vounochurras#readme"
 }
