@@ -67,7 +67,7 @@ window.onload = function () {
     let barbecueObject = JSON.parse(localStorage.getItem("barbecueData"));
     inputNameBarbecue.value = barbecueObject.nameBarbecue;
     inputDateBarbecue.value = barbecueObject.dateBarbecue;
-    inputAddressBarbecue.value = barbecueObject.addreesBarbecue;
+    inputAddressBarbecue.value = barbecueObject.addressBarbecue;
     inputTimeBarbecue.value = barbecueObject.timeBarbecue;
     inputDurationBarbecue.value = barbecueObject.durationBarbecue;
     inputNumberGuests.value = barbecueObject.numberGuests;
@@ -91,6 +91,9 @@ function validarCampos() {
     let maxDuration = '06:00';
     let numberGuests = $$("inputNumberGuests").value;
     let meatKG = $$("inputMeatKG").value;
+    const checkboxes = document.querySelectorAll('input[name="includes-group"]');
+    const includesError = document.getElementById('includes-error');
+    let atLeastOneChecked = false;
     let nameAdmin = $$("inputNameAdmin").value;
     let birthdayAdmin = new Date($$("inputBirthdayAdmin").value + 'UTC-3');
     let maxBirthday = new Date("2007-01-01")
@@ -101,7 +104,7 @@ function validarCampos() {
     if ((nameBarbecue == undefined) || nameBarbecue == "") {
         $$("inputNameBarbecue").setCustomValidity("Erro! Por favor, insira um nome de churrasco válido!");
         return false;
-    } else if((dateBarbecue == "Invalid Date") || (birthday < todayDate)) {
+    } else if((dateBarbecue == "Invalid Date") || (dateBarbecue < todayDate)) {
         $$("inputDateBarbecue").setCustomValidity("Erro! Por favor, insira uma data maior que a data de hoje!");
         return false;
     } else if((addressBarbecue == undefined) || (addressBarbecue == "")) {
@@ -118,7 +121,7 @@ function validarCampos() {
     } else if((meatKG == undefined) || (meatKG == "")) {
         $$("inputMeatKG").setCustomValidity("Erro! Por favor, insira a quantidade em kg de carne");
     } else if ((nameAdmin == undefined) || nameAdmin == "") {
-        $$("inputNameBarbecue").setCustomValidity("Erro! Por favor, insira um nome de churrasco válido!");
+        $$("inputNameAdmin").setCustomValidity("Erro! Por favor, insira um nome de churrasco válido!");
         return false;
     } else if ((birthdayAdmin == "Invalid Date") || (birthdayAdmin > maxBirthday) || (birthdayAdmin < minBirthday)) {
         $$("inputBirthdayAdmin").setCustomValidity("Erro! Por favor, insira uma data de nascimento válido!");
@@ -129,6 +132,33 @@ function validarCampos() {
     } else if((emailAdmin == undefined) || emailAdmin == "") {
         $$("email").setCustomValidity("Erro! Por favor, insira um email válido!");
         return false;
+    }
+    
+    for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            atLeastOneChecked = true;
+            break; // Sai do loop assim que encontrar um checkbox marcado
+        }
+    }
+
+    if (!atLeastOneChecked) {
+        includesError.style.display = 'block';
+        includesError.textContent = 'Erro! Por favor insira pelo menos um item incluso no seu churrasco!';
+        
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].classList.add('is-invalid');
+            checkboxes[i].classList.remove('is-valid');
+        };
+
+        return false;
+    } else {
+        includesError.style.display = 'none';
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].classList.add('is-valid');
+            checkboxes[i].classList.remove('is-invalid');
+        };
     }
 
     alert("Churrasco cadastrado com sucesso!");

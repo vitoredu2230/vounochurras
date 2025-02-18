@@ -1,3 +1,7 @@
 #register-container {
     padding: 30px;
 }
+
+.error-text {
+    display: none;
+}
