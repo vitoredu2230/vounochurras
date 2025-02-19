@@ -162,15 +162,19 @@
 
                 <div class="col-12">
                     <button class="btn btn-danger" onclick="limpar();">Limpar</button>
-                    <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="save(); atualizarModal();">Cadastrar</button>
+                    <button type="submit" id="submit-btn" class="btn btn-danger" onclick="save(); atualizarModal();">Cadastrar</button>
                 </div>
             </form>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="col sm-12">
+                <div class="success-message">Cadastro realizado com sucesso!</div>
+            </div>
+
+            <div class="modal fade register-text" id="information-modal" tabindex="-1" aria-labelledby="information-modal-label" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel"><span id="span-nameBarbecue">{NOME DO CHURRASCO}</span> criado com sucesso!</h1>
+                            <h1 class="modal-title fs-5" id="h1-modal">Churrasco criado com sucesso!</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -180,7 +184,11 @@
                                 <span id="span-addressBarbecue">{RUA FULANO Nº123, BAIRRO JARDIM, CIDADE GUARAPARI, ESTADO MANAUS}</span>, às
                                 <span id="span-timeBarbecue">{HH:MM}</span> com duração de <span id="span-durationBarbecue">{HH:MM}</span>,
                                 com um total de <span id="span-numberGuests">{000}</span> convidados, com um total de <span id="span-meatKG">{000}</span>kg de carne,
-                                
+                                tendo incluso no churrasco os items <span id="span-includes">{CHURRASQUEIRA EMBUTIDA NA PAREDE,SALA DE JOGOS}</span>,
+                                onde foi idealizado pelo organizador <span id="span-nameAdmin">{JUVÊNCIO FULANO DELTRANO}</span>, que nasceu na data <span id="span-birthdayAdmin">{DD/MM/YYYY}</span>(<span id="span-ageAdmin">{00}</span> anos.),
+                                com CPF <span id="span-CPFAdmin">{000.000.000-00}</span>, com email <span id="span-emailAdmin">{JUVENCIO.45@GMAIL.COM}</span>,
+                                do sexo <span id="span-genderAdmin">{MASCULINO:FEMININO}</span> foi criado com sucesso!
+                                Cadastro realizado no dia <span id="span-now-date">{DD/MM/YYYY}</span> às <span id="span-now-hour">{00:00}</span>.
                             </p>
                         </div>
                         <div class="modal-footer">
@@ -199,7 +207,10 @@
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/app/model/Gender.js"></script>
+    <script src="/app/model/Admin.js"></script>
+    <script src="/app/util/Formatter.js"></script>
     <script src="/app/index.js"></script>
+    <script src="/app/model/effects.js"></script>
     <script src="index.js"></script>
     
 </body>

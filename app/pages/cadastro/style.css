@@ -5,3 +5,17 @@
 .error-text {
     display: none;
 }
+
+.success-message{
+    display: none;
+    background-color: rgba(0, 255, 0, 0.3);
+    text-align: center;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-text {
+    display: none;
+}
