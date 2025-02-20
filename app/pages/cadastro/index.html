@@ -67,7 +67,7 @@
                         <label for="">Esse churrasco inclui:</label>
                         <div class="col-4">
                             <div class="form-check is-invalid">
-                                <input class="form-check-input input" type="checkbox" value="Churrasqueira-Parede" name="includes-group" id="wallGrill">
+                                <input class="form-check-input input" type="checkbox" value="Churrasqueira embutida na parede" name="includes-group" id="wallGrill">
                                 <label class="form-check-label" for="wallGrill">
                                     Churrasqueira embutida na parede;
                                 </label>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="col-4">
                             <div class="form-check is-invalid">
-                                <input class="form-check-input input" type="checkbox" value="Churrasqueira-Alvenaria" id="masonryGrill" name="includes-group" name="includes-group">
+                                <input class="form-check-input input" type="checkbox" value="Churrasqueira de Alvenaria" id="masonryGrill" name="includes-group" name="includes-group">
                                 <label class="form-check-label" for="masonryGrill">
                                     Churrasqueira de alvenaria;
                                 </label>
@@ -85,7 +85,7 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-check is-invalid">
-                                <input class="form-check-input input" type="checkbox" value="Sala-Jogos" id="gamesRoom" name="includes-group">
+                                <input class="form-check-input input" type="checkbox" value="Sala de jogos" id="gamesRoom" name="includes-group">
                                 <label class="form-check-label" for="gamesRoom">
                                     Sala de Jogos;
                                 </label>
@@ -126,6 +126,7 @@
                     type="text"
                     id="inputCPFAdmin" 
                     class="form-control input"
+                    maxlength="14"
                     required
                     >
                 </div>
@@ -188,6 +189,7 @@
                                 onde foi idealizado pelo organizador <span id="span-nameAdmin">{JUVÊNCIO FULANO DELTRANO}</span>, que nasceu na data <span id="span-birthdayAdmin">{DD/MM/YYYY}</span>(<span id="span-ageAdmin">{00}</span> anos.),
                                 com CPF <span id="span-CPFAdmin">{000.000.000-00}</span>, com email <span id="span-emailAdmin">{JUVENCIO.45@GMAIL.COM}</span>,
                                 do sexo <span id="span-genderAdmin">{MASCULINO:FEMININO}</span> foi criado com sucesso!
+                                <hr>
                                 Cadastro realizado no dia <span id="span-now-date">{DD/MM/YYYY}</span> às <span id="span-now-hour">{00:00}</span>.
                             </p>
                         </div>
@@ -203,8 +205,8 @@
 
     </footer>
 
-    
     <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/app/model/Gender.js"></script>
     <script src="/app/model/Admin.js"></script>

@@ -54,3 +54,12 @@ main .container{
         background-size: 1460px;
     }
 }
+
+.joke-input{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

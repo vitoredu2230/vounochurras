@@ -8,8 +8,12 @@ document.getElementById('register-form').onsubmit = function(event) {
         ModalElement.addEventListener('hidden.bs.modal', function () {
             jQuery('.success-message').slideUp(2000);
         });
-        
         ModalInstance.show();
+
+        ModalElement.addEventListener('show-bs-modal', function() {
+            document.getElementById("information-modal").removeAttribute("aria-hidden");
+        })
+
 
         jQuery('.register-text').fadeIn(2000);
     });

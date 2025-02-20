@@ -33,6 +33,10 @@
         inputCPFAdmin.value = barbecueObject.CPFAdmin;
         inputEmailAdmin.value = barbecueObject.emailAdmin;
         inputGender.value = barbecueObject.gender;
+
+        jQuery(function() {
+            jQuery(inputCPFAdmin).mask('000.000.000-00', { reverse: false });
+        })
     }
     
     function validarCampos() {
@@ -191,6 +195,7 @@
         let administrador = new admin(inputNameAdmin.value, new Date(inputBirthdayAdmin.value + 'UTC-3'), inputCPFAdmin, inputEmailAdmin);
         let age = administrador.getIdade();
         let birthdayDate = administrador.getBirthday();
+        let birthdayDateFormatted = dateFormatter(birthdayDate);
         let dateBarbecue = new Date(inputDateBarbecue.value + 'UTC-3');
         let dateBarbecueFormatted = dateFormatter(dateBarbecue);
         
@@ -201,13 +206,13 @@
         document.querySelector('#span-durationBarbecue').textContent = inputDurationBarbecue.value;
         document.querySelector('#span-numberGuests').textContent = inputNumberGuests.value;
         document.querySelector('#span-meatKG').textContent = inputMeatKG.value;
-        document.querySelector('#span-includes').textContent = includes.value;
+        document.querySelector('#span-includes').textContent = includes;
         document.querySelector('#span-nameAdmin').textContent = inputNameAdmin.value;
-        document.querySelector('#span-birthdayAdmin').textContent = birthdayDate;
+        document.querySelector('#span-birthdayAdmin').textContent = birthdayDateFormatted;
         document.querySelector('#span-ageAdmin').textContent = age;
         document.querySelector('#span-CPFAdmin').textContent = inputCPFAdmin.value;
         document.querySelector('#span-emailAdmin').textContent = inputEmailAdmin.value;
-        document.querySelector('#span-genderAdmin').textContent = inputGender.value;
+        document.querySelector('#span-genderAdmin').textContent = inputGender;
         document.getElementById('span-now-date').textContent = currentDate();
         document.getElementById('span-now-hour').textContent = currentHour();
     }

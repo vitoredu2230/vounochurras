@@ -10,9 +10,11 @@
   "author": "Vitor Eduardo Witchemichen",
   "license": "ISC",
   "dependencies": {
+    "alertify": "^0.3.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "jquery-mask-plugin": "^1.14.16"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
