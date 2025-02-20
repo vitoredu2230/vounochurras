@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/vitoredu2230/vounochurras/issues"
   },
-  "homepage": "https://github.com/vitoredu2230/vounochurras#readme"
+  "homepage": "https://github.com/vitoredu2230/vounochurras#readme",
+  "type": "commonjs"
 }

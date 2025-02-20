@@ -5,6 +5,9 @@
     }
     
     window.onload = function () {
+        jQuery(function() {
+            jQuery(inputCPFAdmin).mask('000.000.000-00', { reverse: false });
+        })
         console.log("Restaurando um objeto JSON do LocalStorage.");
         let inputNameBarbecue = $$("inputNameBarbecue");
         let inputDateBarbecue = $$("inputDateBarbecue");
@@ -33,10 +36,6 @@
         inputCPFAdmin.value = barbecueObject.CPFAdmin;
         inputEmailAdmin.value = barbecueObject.emailAdmin;
         inputGender.value = barbecueObject.gender;
-
-        jQuery(function() {
-            jQuery(inputCPFAdmin).mask('000.000.000-00', { reverse: false });
-        })
     }
     
     function validarCampos() {
