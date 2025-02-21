@@ -1,9 +1,9 @@
 $(function() {
-    jQuery('#header').load('/app/header.html', function() {
+    jQuery('#header').load('/app/components/header.html', function() {
         changeLink();
     });
 
-    jQuery('#footer').load('/app/footer.html');
+    jQuery('#footer').load('/app/components/footer.html');
 });
 
 function changeLink() {
