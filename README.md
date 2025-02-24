@@ -71,12 +71,14 @@ https://vitoredu2230.github.io/vounochurras/
   - É opcional porque a dependência já vem cadastrada no arquivo `package.json` para instalação local na pasta `node_modules`
 - Executar a API Fake (JSON Server) via um dos seguintes comandos: 
   - Execução via script registrado no `package.json`: `npm run json:server:routes` 
-  - Ou via Execução explícita: `json-server --watch db.json --routes routes.json`
+  - Ou via Execução explícita
+: `json-server --watch db.json --routes routes.json`
 - O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
 - Executar o projeto frontend.
 
 ## Telas da aplicação
-![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%201%20Vounochurras.png)
-![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%202%20Vounochurras.png)
-![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%203%20Vounochurras.png)
+![Tela 1 Vounochurras](https://github.com/user-attachments/assets/ba31c4ef-143d-42ff-8d83-7e15bd94ff56)
+![Tela 2 Vounochurras](https://github.com/user-attachments/assets/b1215986-592c-4c70-b636-779322b52074)
+![Tela 3 Vounochurras](https://github.com/user-attachments/assets/3f1d91a7-a1c9-4b36-b017-41cc0d760116)
+
