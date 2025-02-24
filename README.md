@@ -77,6 +77,6 @@ https://vitoredu2230.github.io/vounochurras/
 - Executar o projeto frontend.
 
 ## Telas da aplicação
-![image](https://github.com/user-attachments/assets/05283ef1-8986-437c-a9a9-55bd99c36727)
-![image](https://github.com/user-attachments/assets/b38a3b57-c182-4a65-84f1-7a2707ec44ea)
-![image](https://github.com/user-attachments/assets/d62133be-d584-4d7d-8f9b-fcbfff5360c3)
+![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%201%20Vounochurras.png)
+![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%202%20Vounochurras.png)
+![image](file:///C:/Users/vitor.eduardo/Pictures/Screenshots/Tela%203%20Vounochurras.png)
