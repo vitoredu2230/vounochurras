@@ -1,3 +1,13 @@
+h5 {
+    font-family: "Open Sans", serif !important;
+    font-size: clamp(1.300rem, 0.917rem + 1.18vw, 2.150rem) !important;
+}
+
+label {
+    font-family: "Open Sans", serif !important;
+    font-size: clamp(0.900rem, 0.917rem + 1.18vw, 0.050rem) !important;
+}
+
 #register-container {
     padding: 30px;
 }

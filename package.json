@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Este projeto tem como objetivo gerenciar e organizar churrascos entre amigos e familiares, tendo o total controle da quantidade de pessoas que estarão no evento e tendo o diferencial de possuir ranking entre os membros para ver quem participa de mais churrascos.",
   "main": "apps.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "json-server": "json-server --watch server/db.json"
   },
   "keywords": [],
   "author": "Vitor Eduardo Witchemichen",
@@ -14,7 +15,8 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1",
-    "jquery-mask-plugin": "^1.14.16"
+    "jquery-mask-plugin": "^1.14.16",
+    "json-server": "^1.0.0-beta.3"
   },
   "devDependencies": {
     "gh-pages": "^6.2.0"
@@ -26,6 +28,5 @@
   "bugs": {
     "url": "https://github.com/vitoredu2230/vounochurras/issues"
   },
-  "homepage": "https://github.com/vitoredu2230/vounochurras#readme",
-  "type": "commonjs"
+  "homepage": "https://github.com/vitoredu2230/vounochurras#readme"
 }

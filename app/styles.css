@@ -1,14 +1,13 @@
 h1 {
-    font-family: "Open Sans", serif;
-    font-size: 30px;
-    font-weight: bold;
+    font-family: "Luckiest Guy", serif;
+    font-size: clamp(1.491rem, 0.9095rem + 2.190vw ,2.3125rem) !important;
     text-align: center;
 }
 
 h3 {
     font-family: "Open Sans", serif;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: clamp(0.11rem, 0.7900rem + 1.15vw, 1.8rem) !important;
+    font-weight: 500 !important;
 }
 
 main {
@@ -35,6 +34,11 @@ main .container{
     padding: 20px;
     border-radius: 15px;
     border: 5px solid red;
+}
+
+.button-area a {
+    font-family: "Open Sans", serif;
+    font-size: 24px
 }
 
 @media (max-width: 768px) and (min-width: 426px) {

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/resources/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+    <header id="header">
+
+    </header>
+
+    <main>
+        <div class="container bg-light" id="register-container">
+            <div class="row">
+                <h5>Cadastre os participantes do churrasco!</h5>
+            </div>
+            <form id="register-form" class="row was-validated">
+                    <div class="col-md-6">
+                        <div class="col-6 my-3">
+                            <label for="inputName" class="form-label">Nome do Participante</label>
+                            <input 
+                            pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+" 
+                            type="text" 
+                            id="inputName" 
+                            class="form-control input"
+                            placeholder="Ex: Fulano Deltrano Ciclano"
+                            required>
+                        </div>
+                        <div class="col-6 my-3">
+                            <label for="inputEmail" class="form-label">Email do Participante</label>
+                            <input type="email" id="inputEmail" class="form-control input" required>
+                        </div>
+                        <div class="col-6 my-3">
+                            <label for="inputPassword">Senha do Participante</label>
+                            <input type="password" class="form-control" id="inputPassword" required>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" id="submit-btn" class="btn btn-danger" onclick="save(); atualizarModal();"> <i class="bi bi-send"></i> Cadastrar</button>
+                        </div>
+                    </div>
+            </form>
+            <div class="col s12">
+                <div class="success-message">Cadastro realizado com sucesso!</div>
+            </div>
+
+            <div class="users-list">
+                <div class="spinner-border text-danger" id="user-spinner" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+    
+                <div
+                id="user-table-container"
+                style="display: none"
+                class="col s12"
+                >
+    
+                <table class="responsive-table" id="patient-table">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+    
+                    <tbody id="patient-body-table">
+                    <tr>
+                        <td>Nome</td>
+                        <td>name@mail.com</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+            
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+
+    </footer>
+
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/node_modules/alertify/lib/alertify.js"></script>
+    <script src="/app/services/user.services.js"></script>
+    <script src="/app/index.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

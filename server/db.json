@@ -1,0 +1,10 @@
+{
+    "users": [ 
+        {
+            "name": "Vitor Eduardo Witchemichen",
+            "email": "vitorw.2024@alunos.utfpr.edu.br",
+            "password": "asdfg",
+            "id": 1
+        }
+    ]
+}

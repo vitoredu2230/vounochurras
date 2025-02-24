@@ -1,31 +1,32 @@
-class admin {
-    constructor(name, birthday, cpf, email) {
-        this.name = name;
+class Admin {
+    constructor(nameAdmin, birthdayAdmin, CPFAdmin, emailAdmin, genderAdmin) {
+        this.nameAdmin = nameAdmin;
         this.today = new Date();
-        this.birthday = new Date(birthday + 'UTC-3');
-        this.cpf = cpf;
+        this.birthdayAdmin = birthdayAdmin;
         this.age = this.today.getFullYear() - birthday.getFullYear();
-        this.email = email;
         this.m = this.today.getMonth() - this.birthday.getMonth();
-        if (this.m < 0 || (this.m === 0 && this.today.getDate() < this.birthday.getDate())) {
+        if (this.m < 0 || (this.m === 0 && this.today.getDate() < this.birthdayAdmin.getDate())) {
             this.age--;
         }
+        this.CPFAdmin = CPFAdmin;
+        this.emailAdmin = emailAdmin;
+        this.genderAdmin = genderAdmin;
     }
 
     getNome() {
-        return this.name;
+        return this.nameAdmin;
     }
     
     getBirthday() {
-        return this.birthday;
+        return this.birthdayAdmin;
     }
 
     getBirthdayDate() {
-        let dia = this.birthday.getDate().toString(),
+        let dia = this.birthdayAdmin.getDate().toString(),
             diaF = (dia.length == 1) ? '0'+dia : dia,
-            mes = (this.birthday.getMonth()+1).toString(),
+            mes = (this.birthdayAdmin.getMonth()+1).toString(),
             mesF = (mes.length == 1) ? '0'+mes : mes,
-            anoF = this.birthday.getFullYear();
+            anoF = this.birthdayAdmin.getFullYear();
         console.log(dia);
         return diaF+"/"+mesF+"/"+anoF;
     }

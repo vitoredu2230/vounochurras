@@ -58,12 +58,12 @@
                     <label for="inputNumberGuests" class="form-label">Nº de Convidados</label>
                     <input type="number" id="inputNumberGuests" class="form-control input" required>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     <label for="inputMeatKG" class="form-label">Quantidade em kg de Carne</label>
                     <input type="number" id="inputMeatKG" class="form-control input" required>
                 </div>
                 <div class="col-6">
-                    <div class="row">
+                    <div class="row mb-2">
                         <label for="">Esse churrasco inclui:</label>
                         <div class="col-4">
                             <div class="form-check is-invalid">
@@ -73,7 +73,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 ms-5">
                             <div class="form-check is-invalid">
                                 <input class="form-check-input input" type="checkbox" value="Churrasqueira de Alvenaria" id="masonryGrill" name="includes-group" name="includes-group">
                                 <label class="form-check-label" for="masonryGrill">
@@ -91,7 +91,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 ms-5">
                             <div class="form-check is-invalid">
                                 <input class="form-check-input input" type="checkbox" value="Geladeira" id="fridge" name="includes-group">
                                 <label class="form-check-label" for="fridge">
@@ -115,7 +115,7 @@
                     required>
                 </div>
                 <div class="col-6">
-                    <label for="inputBirthdayAdmin" class="form-label">Data de Nascimento do Administrador do Churrasco</label>
+                    <label for="inputBirthdayAdmin" class="form-label">Data de Nascimento do Administrador</label>
                     <input min="1900-01-01" type="date" id="inputBirthdayAdmin" class="form-control input" required>
                 </div>
                 <div class="col-6">
@@ -163,7 +163,7 @@
 
                 <div class="col-12">
                     <button class="btn btn-danger" onclick="limpar();">Limpar</button>
-                    <button type="submit" id="submit-btn" class="btn btn-danger" onclick="save(); atualizarModal();">Cadastrar</button>
+                    <button type="submit" id="submit-btn" class="btn btn-danger" onclick="save(); atualizarModal();"> <i class="bi bi-send"></i> Cadastrar</button>
                 </div>
             </form>
 
@@ -183,7 +183,7 @@
                                 O churrasco <span id="span-nameBarbecue">{NOME DO CHURRASCO}</span> está marcado para a data
                                 <span id="span-dateBarbecue">{DD/MM/YYYY}</span>, no endereço
                                 <span id="span-addressBarbecue">{RUA FULANO Nº123, BAIRRO JARDIM, CIDADE GUARAPARI, ESTADO MANAUS}</span>, às
-                                <span id="span-timeBarbecue">{HH:MM}</span> com duração de <span id="span-durationBarbecue">{HH:MM}</span>,
+                                <span id="span-timeBarbecue">{HH:MM}</span>hrs com duração de <span id="span-durationBarbecue">{HH:MM}</span>hrs,
                                 com um total de <span id="span-numberGuests">{000}</span> convidados, com um total de <span id="span-meatKG">{000}</span>kg de carne,
                                 tendo incluso no churrasco os items <span id="span-includes">{CHURRASQUEIRA EMBUTIDA NA PAREDE,SALA DE JOGOS}</span>,
                                 onde foi idealizado pelo organizador <span id="span-nameAdmin">{JUVÊNCIO FULANO DELTRANO}</span>, que nasceu na data <span id="span-birthdayAdmin">{DD/MM/YYYY}</span>(<span id="span-ageAdmin">{00}</span> anos.),
@@ -207,13 +207,14 @@
 
     <script src="/node_modules/jquery/dist/jquery.js"></script>
     <script src="/node_modules/jquery-mask-plugin/dist/jquery.mask.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/app/model/Gender.js"></script>
     <script src="/app/model/Admin.js"></script>
+    <script src="/app/model/Barbecue.js"></script>
+    <script src="/app/model/Gender.js"></script>
+    <script src="/app/model/List.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/app/util/Formatter.js"></script>
+    <script src="/app//pages/cadastro/index.js"></script>
     <script src="/app/index.js"></script>
-    <script src="/app/model/effects.js"></script>
-    <script src="index.js"></script>
     
 </body>
 </html>

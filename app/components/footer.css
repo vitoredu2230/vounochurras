@@ -1,0 +1,4 @@
+span {
+    font-family: 'Open Sans', serif;
+    font-size: clamp(0.110rem, 0.300rem + 1.15vw, 0.909rem) !important;
+}
