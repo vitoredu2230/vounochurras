@@ -61,7 +61,7 @@ https://vitoredu2230.github.io/vounochurras/
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
-- Fazer checkout no branch `develop` que contém as modificações mais recentes
+- Fazer checkout no branch `master` que contém as modificações mais recentes
 - Abrir o projeto no editor Visual Studio Code (VS Code)
 - Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
 - Instalar as dependências contidas no `package.json`
