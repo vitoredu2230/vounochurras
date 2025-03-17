@@ -2,9 +2,9 @@ class Admin {
     constructor(nameAdmin, birthdayAdmin, CPFAdmin, emailAdmin, genderAdmin) {
         this.nameAdmin = nameAdmin;
         this.today = new Date();
-        this.birthdayAdmin = birthdayAdmin;
-        this.age = this.today.getFullYear() - birthday.getFullYear();
-        this.m = this.today.getMonth() - this.birthday.getMonth();
+        this.birthdayAdmin = new Date(birthdayAdmin.value + 'UTC-3');
+        this.age = this.today.getFullYear() - this.birthdayAdmin.getFullYear();
+        this.m = this.today.getMonth() - this.birthdayAdmin.getMonth();
         if (this.m < 0 || (this.m === 0 && this.today.getDate() < this.birthdayAdmin.getDate())) {
             this.age--;
         }

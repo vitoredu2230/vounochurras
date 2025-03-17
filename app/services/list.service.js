@@ -1,4 +1,4 @@
-export class ListService {
+class ListService {
     constructor() {}
 
     LOCAL_STORAGE_KEY = 'lists';

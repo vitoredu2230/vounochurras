@@ -7,9 +7,15 @@ habilitarBotao();
 document.getElementById('register-form').onsubmit = function (event) {
         event.preventDefault();
 
+        if(validarCampos()) {
+            save();
+            atualizarModal();
+        }
+
         if(!formularioEValido()) {
             alertify.error('Por favor, verifique seus campos destacados!');
-            return;
+            console.log("Erro!");
+            return false;
         }
 
         const admin = lerDadosFormulárioCriarAdmin();
@@ -31,7 +37,7 @@ document.getElementById('register-form').onsubmit = function (event) {
             });
             ModalInstance.show();
 
-            ModalElement.addEventListener('show-bs-modal', function() {
+            ModalElement.addEventListener('show.bs.modal', function() {
                 document.getElementById("information-modal").removeAttribute("aria-hidden");
             })
 
@@ -46,16 +52,49 @@ window.onload = function () {
     })
     console.log("Restaurando um objeto JSON do LocalStorage.");
     let inputNameBarbecue = $$("inputNameBarbecue");
+    inputNameBarbecue.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputDateBarbecue = $$("inputDateBarbecue");
+    inputDateBarbecue.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputAddressBarbecue = $$("inputAddressBarbecue");
+    inputAddressBarbecue.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputTimeBarbecue = $$("inputTimeBarbecue");
+    inputTimeBarbecue.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputDurationBarbecue = $$("inputDurationBarbecue");
+    inputDurationBarbecue.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputNumberGuests = $$("inputNumberGuests");
+    inputNumberGuests.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputMeatKG = $$("inputMeatKG");
+    inputMeatKG.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputNameAdmin = $$("inputNameAdmin");
+    inputNameAdmin.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputBirthdayAdmin = $$("inputBirthdayAdmin");
+    inputBirthdayAdmin.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputCPFAdmin = $$("inputCPFAdmin");
+    inputCPFAdmin.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputEmailAdmin = $$("inputEmailAdmin");
+    inputEmailAdmin.addEventListener("input", function() {
+        this.setCustomValidity("");
+    })
     let inputGender = $$("input-gender-masculine").checked
     ? Gender.MALE
     : Gender.FEMALE;
@@ -105,13 +144,16 @@ function validarCampos() {
     } else if((addressBarbecue == undefined) || (addressBarbecue == "")) {
         $$("inputAddressBarbecue").setCustomValidity("Erro! Por favor, insira um endereço válido!");
         return false;
-    } else if((timeBarbecue == "Invalid Time") || (timeBarbecue < minTime) || (timeBarbecue > maxTime)) {
+    } 
+    else if((timeBarbecue < minTime) || (timeBarbecue > maxTime)) {
         $$("inputTimeBarbecue").setCustomValidity("Erro! Por favor, insira uma hora válida!");
         return false;
-    } else if((durationBarbecue == "Invalid Time") || (durationBarbecue < maxDuration)) {
+    } 
+    else if((durationBarbecue == "Invalid Time") || (durationBarbecue > maxDuration)) {
         $$("inputTimeBarbecue").setCustomValidity("Erro! Por favor, insira uma hora válida!");
         return false;
-    } else if((numberGuests == undefined) || (numberGuests == "")) {
+    } 
+    else if((numberGuests == undefined) || (numberGuests == "")) {
         $$("inputNumberGuests").setCustomValidity("Erro! Por favor insira pelo menos 3 convidados");
     } else if((meatKG == undefined) || (meatKG == "")) {
         $$("inputMeatKG").setCustomValidity("Erro! Por favor, insira a quantidade em kg de carne");
@@ -132,7 +174,7 @@ function validarCampos() {
     for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
             atLeastOneChecked = true;
-            break; // Sai do loop assim que encontrar um checkbox marcado
+            break;
         }
     }
 
@@ -179,6 +221,8 @@ function validarInclusos() {
             }
         }
     })
+
+    return true;
 }
 
 function formularioEValido() {
@@ -232,7 +276,7 @@ function save() {
     let inputGender = $$("input-gender-masculine").checked
     ? Gender.MALE
     : Gender.FEMALE;
-    let administrador = new admin(inputNameAdmin.value, new Date(inputBirthdayAdmin.value + 'UTC-3'), inputCPFAdmin, inputEmailAdmin);
+    let administrador = new Admin(inputNameAdmin.value, inputBirthdayAdmin, inputCPFAdmin, inputEmailAdmin);
     let age = administrador.getIdade();
     let includes = [];
     for (let elem of document.getElementsByName('includes-group')) {
@@ -258,7 +302,9 @@ function save() {
     barbecueData.emailAdmin = inputEmailAdmin.value;
     barbecueData.age = age.value;
 
+
     localStorage.setItem("barbecueData", JSON.stringify(barbecueData));
+    console.log(barbecueData);
 }
 
 function salvarListaLocal(list) {
@@ -289,7 +335,7 @@ function atualizarModal() {
             includes.push(elem.value);
         }
     }
-    let administrador = new admin(inputNameAdmin.value, new Date(inputBirthdayAdmin.value + 'UTC-3'), inputCPFAdmin, inputEmailAdmin);
+    let administrador = new Admin(inputNameAdmin.value, new Date(inputBirthdayAdmin.value + 'UTC-3'), inputCPFAdmin, inputEmailAdmin);
     let age = administrador.getIdade();
     let birthdayDate = administrador.getBirthday();
     let birthdayDateFormatted = dateFormatter(birthdayDate);

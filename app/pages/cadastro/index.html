@@ -16,7 +16,7 @@
             <div class="row">
                 <h5>Preencha as informações do seu churrasco</h5>
             </div>
-            <form id="register-form" class="row g-3 was-validated" onsubmit="event.preventDefault(); return validarCampos();">
+            <form id="register-form" class="row g-3 was-validated" onsubmit="return validarCampos();">
                 <div class="col-md-6">
                     <label for="inputNameBarbecue" class="form-label">Nome do Churrasco</label>
                     <input
@@ -49,6 +49,9 @@
                 <div class="col-6">
                     <label for="inputTimeBarbecue" class="form-label">Começa às</label>
                     <input type="time" class="form-control input" id="inputTimeBarbecue" min="09:00" max="21:00" required>
+                    <div class="invalid-feedback">
+                        Por favor, insira o horário de churrasco válido!
+                    </div>
                 </div>
                 <div class="col-6">
                     <label for="inputDurationBarbecue" class="form-label">Duração</label>
@@ -163,7 +166,7 @@
 
                 <div class="col-12">
                     <button class="btn btn-danger" onclick="limpar();">Limpar</button>
-                    <button type="submit" id="submit-btn" class="btn btn-danger" onclick="save(); atualizarModal();"> <i class="bi bi-send"></i> Cadastrar</button>
+                    <button type="submit" id="submit-btn" class="btn btn-danger"> <i class="bi bi-send"></i> Cadastrar</button>
                 </div>
             </form>
 
@@ -207,13 +210,15 @@
 
     <script src="/assets/libraries/jquery/dist/jquery.js"></script>
     <script src="/assets/libraries/jquery-mask-plugin/dist/jquery.mask.js"></script>
+    <script src="/assets/libraries/bootstrap/dist/js/bootstrap.js"></script>
     <script src="/app/model/Admin.js"></script>
     <script src="/app/model/Barbecue.js"></script>
     <script src="/app/model/Gender.js"></script>
     <script src="/app/model/List.js"></script>
-    <script src="/assets/libraries/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/app/services/list.service.js"></script>
     <script src="/app/util/Formatter.js"></script>
-    <script src="/app//pages/cadastro/index.js"></script>
+    <script src="/assets/libraries/alertify/src/alertify.js"></script>
+    <script src="/app/pages/cadastro/index.js"></script>
     <script src="/app/index.js"></script>
     
 </body>
