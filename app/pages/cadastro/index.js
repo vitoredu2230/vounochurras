@@ -365,6 +365,18 @@ function limpar() {
     for(let i = 0; i < listaCampos.length; i++) {
         listaCampos[i].value = '';
     }
+
+    const includesCheckboxes = document.querySelectorAll('[name="includes-group"]');
+
+    console.log(includesCheckboxes);
+
+    for(let i = 0; i < includesCheckboxes.length; i++) {
+        if(includesCheckboxes[i].checked) {
+            includesCheckboxes[i].checked = false;
+            includesCheckboxes[i].classList.add("is-invalid");
+        }
+    }
+
 }
 function habilitarBotao() {
     const botaoEnvio = document.getElementById("submit-btn");
